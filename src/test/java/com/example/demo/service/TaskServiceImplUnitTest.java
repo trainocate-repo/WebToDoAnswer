@@ -85,7 +85,7 @@ class TaskServiceImplUnitTest {
     @Test // テストケース
     @DisplayName("タスクが取得できない場合のテスト")
         // テスト名
-    void testGetTaskFormThrowException() {
+    void testGetTaskThrowException() {
     	
         // モッククラスのI/Oをセット
         when(dao.findById(0)).thenThrow(new EmptyResultDataAccessException(1));
@@ -102,9 +102,9 @@ class TaskServiceImplUnitTest {
     @Test // テストケース
     @DisplayName("タスクを1件取得した場合のテスト")
         // テスト名
-    void testGetTaskFormReturnOne() {
+    void testGetTaskReturnOne() {
     	
-    	//TaskFormをデフォルト値でインスタンス化
+    	//Taskをデフォルト値でインスタンス化
     	Task task = new Task();
     	Optional<Task> taskOpt  = Optional.ofNullable(task);
         // モッククラスのI/Oをセット
